@@ -1,0 +1,72 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #222;
+    height: 500px;
+    position: relative;
+    width: 800px;
+}
+
+.container .clip {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.container .clip.clip1 {
+    background: url(https://www.pexels.com/pt-br/foto/homem-em-pe-perto-da-costa-1208777/);
+    background-size: cover;
+    clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
+}
+
+.container .clip.clip2 {
+    background: url(assets/img2.jpg);
+    background-size: cover;
+    clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
+}
+
+.container .clip.clip3 {    
+    background: url(assets/img3.jpg);
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
+}
+
+.container:hover .clip {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.container .clip:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.container .clip .content {
+    background: #fff;
+    bottom: -100%;
+    left: 0;
+    opacity: 0;
+    padding: 20px;
+    position: absolute;
+    transition: 0.5s;
+    width: 70%;
+}
+
+.container .clip:hover .content {
+    bottom: 0;
+    opacity: 1;
+}
